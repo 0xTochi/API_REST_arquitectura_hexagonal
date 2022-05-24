@@ -1,0 +1,13 @@
+version: '3'
+services: 
+    api:
+        build: ./src/
+        volumes: 
+            - ./src/:/usr/src/app/
+        ports: 
+            - 8084:8084
+        environment:
+            DB_URL: "sqlite:////usr/src/app/tmp/pagos.db"
+            HOST: "0.0.0.0" #localhost
+            PORT: 8084
+            FLASK_DEBUG: 1
